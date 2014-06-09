@@ -6,6 +6,10 @@
 	<version>1.0.0</version>
 
 	<url>http://www.hascode.com/</url>
+	
+	<prerequisites>
+		<maven>3.2.1</maven>
+	</prerequisites>
 
 	<properties>
 		<jdk.version>1.8</jdk.version>
@@ -51,7 +55,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.4</version>
+				<version>3.0</version>
 				<configuration>
 					<source>${jdk.version}</source>
 					<target>${jdk.version}</target>
@@ -118,6 +122,42 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.3.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<systemProperties>
+						<systemProperty>
+							<key>jdbc.driver</key>
+							<value>${jdbc.driver}</value>
+						</systemProperty>
+						<systemProperty>
+							<key>jdbc.user</key>
+							<value>${jdbc.user}</value>
+						</systemProperty>
+						<systemProperty>
+							<key>jdbc.password</key>
+							<value>${jdbc.password}</value>
+						</systemProperty>
+						<systemProperty>
+							<key>jdbc.url</key>
+							<value>${jdbc.url}</value>
+						</systemProperty>
+						<systemProperty>
+							<key>jdbc.database.name</key>
+							<value>${jdbc.database.name}</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

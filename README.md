@@ -52,7 +52,13 @@ And some content ..
 
 Simply run the following command:
 
-    mvn compile
+    mvn compile exec:java -Dexec.mainClass=com.hascode.tutorial.BookStore
+
+You should see some output from the jOOQ model generator and finally the following output from the query:
+
+    Another Book (id: 2)
+    Some completely other book (id: 3)
+
 
 ----
 
