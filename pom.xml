@@ -22,8 +22,8 @@
 			<properties>
 				<jdbc.user>user</jdbc.user>
 				<jdbc.password>password</jdbc.password>
-				<jdbc.url>jdbc:mysql://localhost:3306/database</jdbc.url>
-				<jdbc.database.name>database</jdbc.database.name>
+				<jdbc.url>jdbc:mysql://localhost:3306/mydb</jdbc.url>
+				<jdbc.database.name>mydb</jdbc.database.name>
 			</properties>
 		</profile>
 	</profiles>
